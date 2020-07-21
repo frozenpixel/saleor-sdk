@@ -520,6 +520,38 @@ export interface UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpd
   amount: number;
 }
 
+export interface UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpdate_checkout_availablePaymentGateways_config {
+  __typename: "GatewayConfigLine";
+  /**
+   * Gateway config key.
+   */
+  field: string;
+  /**
+   * Gateway config value for key.
+   */
+  value: string | null;
+}
+
+export interface UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpdate_checkout_availablePaymentGateways {
+  __typename: "PaymentGateway";
+  /**
+   * Payment gateway ID.
+   */
+  id: string;
+  /**
+   * Payment gateway name.
+   */
+  name: string;
+  /**
+   * Payment gateway client configuration.
+   */
+  config: UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpdate_checkout_availablePaymentGateways_config[];
+  /**
+   * Payment gateway supported currencies.
+   */
+  currencies: (string | null)[];
+}
+
 export interface UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpdate_checkout {
   __typename: "Checkout";
   /**
@@ -565,6 +597,10 @@ export interface UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpd
   discountName: string | null;
   translatedDiscountName: string | null;
   voucherCode: string | null;
+  /**
+   * List of available payment gateways.
+   */
+  availablePaymentGateways: UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpdate_checkout_availablePaymentGateways[];
 }
 
 export interface UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpdate {
@@ -1070,6 +1106,38 @@ export interface UpdateCheckoutBillingAddressWithEmail_checkoutEmailUpdate_check
   amount: number;
 }
 
+export interface UpdateCheckoutBillingAddressWithEmail_checkoutEmailUpdate_checkout_availablePaymentGateways_config {
+  __typename: "GatewayConfigLine";
+  /**
+   * Gateway config key.
+   */
+  field: string;
+  /**
+   * Gateway config value for key.
+   */
+  value: string | null;
+}
+
+export interface UpdateCheckoutBillingAddressWithEmail_checkoutEmailUpdate_checkout_availablePaymentGateways {
+  __typename: "PaymentGateway";
+  /**
+   * Payment gateway ID.
+   */
+  id: string;
+  /**
+   * Payment gateway name.
+   */
+  name: string;
+  /**
+   * Payment gateway client configuration.
+   */
+  config: UpdateCheckoutBillingAddressWithEmail_checkoutEmailUpdate_checkout_availablePaymentGateways_config[];
+  /**
+   * Payment gateway supported currencies.
+   */
+  currencies: (string | null)[];
+}
+
 export interface UpdateCheckoutBillingAddressWithEmail_checkoutEmailUpdate_checkout {
   __typename: "Checkout";
   /**
@@ -1115,6 +1183,10 @@ export interface UpdateCheckoutBillingAddressWithEmail_checkoutEmailUpdate_check
   discountName: string | null;
   translatedDiscountName: string | null;
   voucherCode: string | null;
+  /**
+   * List of available payment gateways.
+   */
+  availablePaymentGateways: UpdateCheckoutBillingAddressWithEmail_checkoutEmailUpdate_checkout_availablePaymentGateways[];
 }
 
 export interface UpdateCheckoutBillingAddressWithEmail_checkoutEmailUpdate_errors {

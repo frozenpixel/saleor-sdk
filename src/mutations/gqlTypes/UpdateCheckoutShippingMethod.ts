@@ -503,6 +503,38 @@ export interface UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_check
   amount: number;
 }
 
+export interface UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_checkout_availablePaymentGateways_config {
+  __typename: "GatewayConfigLine";
+  /**
+   * Gateway config key.
+   */
+  field: string;
+  /**
+   * Gateway config value for key.
+   */
+  value: string | null;
+}
+
+export interface UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_checkout_availablePaymentGateways {
+  __typename: "PaymentGateway";
+  /**
+   * Payment gateway ID.
+   */
+  id: string;
+  /**
+   * Payment gateway name.
+   */
+  name: string;
+  /**
+   * Payment gateway client configuration.
+   */
+  config: UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_checkout_availablePaymentGateways_config[];
+  /**
+   * Payment gateway supported currencies.
+   */
+  currencies: (string | null)[];
+}
+
 export interface UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_checkout {
   __typename: "Checkout";
   /**
@@ -548,6 +580,10 @@ export interface UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_check
   discountName: string | null;
   translatedDiscountName: string | null;
   voucherCode: string | null;
+  /**
+   * List of available payment gateways.
+   */
+  availablePaymentGateways: UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_checkout_availablePaymentGateways[];
 }
 
 export interface UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_errors {
